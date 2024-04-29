@@ -316,7 +316,7 @@ interface GigabitEthernet0/0/1.15
  no snmp trap link-status
  !
 interface GigabitEthernet0/0/2
- description HVPN PE WAN Interface
+ description not-in-use
  bandwidth 1000000
  no ip address
   full-duplex
