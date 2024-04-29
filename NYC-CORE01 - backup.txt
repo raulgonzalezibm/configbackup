@@ -269,7 +269,8 @@ interface FastEthernet0/2/2
 interface FastEthernet0/2/3
  bandwidth 100000
  no ip address
-  half-duplex
+  shutdown
+ half-duplex
 !
 interface FastEthernet0/2/4
  bandwidth 100000
