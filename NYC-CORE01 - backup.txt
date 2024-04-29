@@ -252,12 +252,13 @@ mta receive maximum-recipients 0
 interface FastEthernet0/2/0
  bandwidth 100000
  no ip address
-  half-duplex
+  shutdown
+ half-duplex
 !
 interface FastEthernet0/2/1
  bandwidth 100000
  no ip address
-  half-duplex
+  full-duplex
 !
 interface FastEthernet0/2/2
  bandwidth 100000
