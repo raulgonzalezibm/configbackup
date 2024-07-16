@@ -1,9 +1,0 @@
-device does not reliably implement OLD-CISCO-TS-MIB, thus only partial IOS support
-SFO-EDGE01#terminal length 0
-show running
-exit
-SFO-EDGE01#show running
-show running: execution failed...
-See log for more details
-SFO-EDGE01#exit
-SFO-EDGE01#
