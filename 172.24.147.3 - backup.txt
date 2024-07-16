@@ -1,0 +1,9 @@
+device does not reliably implement OLD-CISCO-TS-MIB, thus only partial IOS support
+MSPWG-Lon-Edge-1-MIMIC1-172.24.147.3#terminal length 0
+show running
+exit
+MSPWG-Lon-Edge-1-MIMIC1-172.24.147.3#show running
+show running: execution failed...
+See log for more details
+MSPWG-Lon-Edge-1-MIMIC1-172.24.147.3#exit
+MSPWG-Lon-Edge-1-MIMIC1-172.24.147.3#
