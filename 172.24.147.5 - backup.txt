@@ -1,0 +1,9 @@
+device does not reliably implement OLD-CISCO-TS-MIB, thus only partial IOS support
+CHI-EDGE01#terminal length 0
+show running
+exit
+CHI-EDGE01#show running
+show running: execution failed...
+See log for more details
+CHI-EDGE01#exit
+CHI-EDGE01#
