@@ -388,7 +388,9 @@ interface POS0/1/3
 router bgp 65412
 !
 !
+ip default-gateway 0.0.0.0
 ip classless
+ip route 0.0.0.0 0.0.0.0 10.0.0.1
 ip route 172.24.147.63 255.255.255.255 GigabitEthernet0/0/1
 ip http server
 !
