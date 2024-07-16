@@ -389,6 +389,7 @@ router bgp 65412
 !
 !
 ip classless
+ip route 1.1.1.1 255.255.255.255 10.0.0.1
 ip http server
 !
 ip pim bidir-enable
