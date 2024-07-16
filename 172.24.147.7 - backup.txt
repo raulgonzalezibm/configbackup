@@ -1,0 +1,9 @@
+device does not reliably implement OLD-CISCO-TS-MIB, thus only partial IOS support
+SIN-EDGE01#terminal length 0
+show running
+exit
+SIN-EDGE01#show running
+show running: execution failed...
+See log for more details
+SIN-EDGE01#exit
+SIN-EDGE01#
