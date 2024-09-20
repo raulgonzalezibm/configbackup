@@ -3,7 +3,7 @@
 User Access Verification
 
 NYC-SR01#terminal length 0
-show running
+tshow running
 exit
 NYC-SR01#show running
 Building configuration... 
