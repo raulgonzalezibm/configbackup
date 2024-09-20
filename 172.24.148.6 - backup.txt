@@ -3,8 +3,9 @@
 User Access Verification
 
 CHI-SR01#terminal length 0
-shoCHI-SR01#show running
+show running
 exit
+CHI-SR01#show running
 Building configuration... 
 Current configuration : 3357 bytes
 !
