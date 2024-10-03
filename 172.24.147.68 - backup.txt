@@ -3,9 +3,8 @@
 User Access Verification
 
 NYC-SR01#terminal length 0
-tshow running
-exit
 NYC-SR01#show running
+sexit
 Building configuration... 
 Current configuration : 3357 bytes
 !
