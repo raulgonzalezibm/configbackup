@@ -165,6 +165,8 @@ policy-map COPP
   class MIMIC-Non-Critical-Apps
   class MIMIC-Critical-Apps
   class MIMIC-Non-Critical-Apps
+  class MIMIC-Critical-Apps
+  class MIMIC-Non-Critical-Apps
 
 policy-map Core-GigE-uplink 
   class core-nondefault-output
@@ -202,6 +204,8 @@ policy-map Core-GigE-uplink
   class MIMIC-Non-Critical-Apps
   class MIMIC-Critical-Apps
   class MIMIC-Non-Critical-Apps
+  class MIMIC-Critical-Apps
+  class MIMIC-Non-Critical-Apps
 
 policy-map MIMIC-Outgoing MIMIC Outgoing Policy
   class core-nondefault-output
@@ -223,6 +227,8 @@ policy-map MIMIC-Outgoing MIMIC Outgoing Policy
   class copp-catch-all-IP
   class copp-ARP
   class class-default
+  class MIMIC-Critical-Apps
+  class MIMIC-Non-Critical-Apps
   class MIMIC-Critical-Apps
   class MIMIC-Non-Critical-Apps
   class MIMIC-Critical-Apps
