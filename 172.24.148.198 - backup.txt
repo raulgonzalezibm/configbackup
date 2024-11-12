@@ -2,10 +2,10 @@
 
 User Access Verification
 
+terminal length 0
 SIN-SR01#terminal length 0
-show running
-exit
 SIN-SR01#show running
+sexit
 Building configuration... 
 Current configuration : 3357 bytes
 !
