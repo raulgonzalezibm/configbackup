@@ -31,7 +31,7 @@ ip cef
 !
 !
 ip ssh time-out 120
-ip ssh authentication-retries 3
+ip ssh authentication-retries 2
 !
 !
   0 
