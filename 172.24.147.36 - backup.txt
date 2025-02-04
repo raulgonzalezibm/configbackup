@@ -19,7 +19,7 @@ hostname NYC-CORE01
 no logging buffered
 !
 boot system flash slot0:
-enable password enable1234
+enable password enable123
 !
 username lab password 0 lab123
 !
