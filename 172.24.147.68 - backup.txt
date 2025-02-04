@@ -165,8 +165,6 @@ policy-map COPP
   class MIMIC-Non-Critical-Apps
   class MIMIC-Critical-Apps
   class MIMIC-Non-Critical-Apps
-  class MIMIC-Critical-Apps
-  class MIMIC-Non-Critical-Apps
 
 policy-map Core-GigE-uplink 
   class core-nondefault-output
