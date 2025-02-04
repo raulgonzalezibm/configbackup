@@ -303,9 +303,9 @@ interface FastEthernet0/2/7
 !
 interface GigabitEthernet0/0/0
  description to P2-AMH-US
- bandwidth 100000
+ bandwidth 1000000
  ip address 172.24.147.94 255.255.255.254
- ip mtu 9600
+ ip mtu 1700
   full-duplex
 !
 interface GigabitEthernet0/0/0.15
@@ -337,7 +337,7 @@ interface GigabitEthernet0/0/3
  description HVPN PE WAN Interface
  bandwidth 100000
  no ip address
-  half-duplex
+  full-duplex
 !
 interface GigabitEthernetUplink1
  bandwidth 1000000
