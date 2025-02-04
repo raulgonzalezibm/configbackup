@@ -3,9 +3,8 @@
 User Access Verification
 
 LON-SR01#terminal length 0
-show running
-exit
 LON-SR01#show running
+exit
 Building configuration... 
 Current configuration : 3357 bytes
 !
