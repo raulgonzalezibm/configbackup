@@ -21,7 +21,7 @@ no logging buffered
 boot system flash slot0:
 enable password enable123
 !
-username lab password 0 lab1234
+username lab password 0 lab123
 !
 !
 ip subnet-zero
