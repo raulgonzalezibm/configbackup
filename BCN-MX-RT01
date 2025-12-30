@@ -1,26 +1,17 @@
-## Last commit: 2025-10-29 15:12:57 EDT by demoadmin
 version 12.3R11.2;
 system {
-    host-name BCN-MX-RT01;
+    host-name BCN-EX-SW01;
     time-zone America/New_York;
     root-authentication {
-        encrypted-password "$1$5S7bbwJ2$/AdwBQOsuwyLtjO5y/9g6."; ## SECRET-DATA
+        encrypted-password "$G1Y'/1aG15G*afYJ+51Go1!aTQjGq5.1"; ## SECRET-DATA
     }
     login {
         user demoadmin {
-            full-name demoadmin;
+            full-name admin;
             uid 2000;
             class super-user;
             authentication {
-                encrypted-password "$1$h5.uQ88G$93gQmKfP0KwyxU2VD6DCo0"; ## SECRET-DATA
-            }
-        }
-        user labadmin {
-            full-name labadmin;
-            uid 2001;
-            class super-user;
-            authentication {
-                encrypted-password "$1$HDVkXcOA$YZukynexmfpqrck31eXTC."; ## SECRET-DATA
+                encrypted-password "$G1Y'/1aG15G*afYJ+51Go1!aTQjGq5.1"; ## SECRET-DATA
             }
         }
     }
@@ -39,8 +30,8 @@ system {
         user * {
             any emergency;
         }
-        host 10.1.100.21 {
-            source-address 10.196.2.19;
+        host 10.0.0.1 {
+            source-address 10.0.0.10;
         }
         file messages {
             any notice;
@@ -51,285 +42,117 @@ system {
         }
     }
 }
-interfaces {
-    ge-0/0/0 {
-        unit 0 {
-            family ethernet-switching;
+interfaces{
+    xe-0/0/0 {
+        ether-options {
+            802.3ad ae0;
+	    speed auto;
         }
     }
-    ge-0/0/1 {
-        vlan-tagging;
-        unit 3340 {
-            vlan-id 3340;
-            family inet {
-                address 10.21.40.50/24;
-            }
+    xe-0/0/1 {
+        ether-options {
+            802.3ad ae0;
+	    speed 10g;
         }
     }
-    ge-0/0/2 {
+    xe-0/0/2 {
+        ether-options {
+            802.3ad ae0;
+	    speed 10g;
+        }
+    }
+    xe-0/0/3 {
+        ether-options {
+            802.3ad ae0;
+	    speed 10g;
+        }
+    }
+    xe-0/1/0 {
+        ether-options {
+            802.3ad ae0;
+	    speed 10g;
+        }
         unit 0 {
             family ethernet-switching {
-                port-mode trunk;
+                interface-mode access;
                 vlan {
-                    members [ Heartbeat IPT-1st IPT-2nd IPT-Core NOC Users-1st Users-2nd VM-Mgmt VMs WAN iSCSI-SAN ];
+                    members IPT-1st ;
                 }
             }
         }
     }
-    ge-0/0/3 {
+    xe-0/1/1 {
+        ether-options {
+            802.3ad ae0;
+	    speed 10g;
+        }
         unit 0 {
             family ethernet-switching {
-                port-mode trunk;
+                interface-mode access;
                 vlan {
-                    members [ Heartbeat IPT-1st IPT-2nd IPT-Core NOC Users-1st Users-2nd VMs WAN iSCSI-SAN ];
+                    members IPT-1st ;
                 }
             }
         }
     }
-    ge-0/0/4 {
+    xe-0/1/2 {
+        ether-options {
+            802.3ad ae0;
+	    speed 10g;
+        }
         unit 0 {
             family ethernet-switching {
-                port-mode access;
+                interface-mode access;
                 vlan {
-                    members Users-1st;
+                    members IPT-1st ;
                 }
             }
         }
     }
-    ge-0/0/5 {
+    xe-0/1/3 {
+        ether-options {
+            802.3ad ae0;
+	    speed 10g;
+        }
         unit 0 {
             family ethernet-switching {
-                port-mode access;
+                interface-mode access;
                 vlan {
-                    members Users-1st;
+                    members IPT-1st ;
                 }
             }
         }
     }
-    ge-0/0/6 {
+    ae0 {
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+            }
+        }
         unit 0 {
             family ethernet-switching {
-                port-mode access;
+                interface-mode trunk;
                 vlan {
-                    members Users-1st;
+                    members [ Heartbeat IPT-1st IPT-2nd IPT-Core NOC VM-Mgmt ];
                 }
+                storm-control default;
             }
         }
     }
-    ge-0/0/7 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/8 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/9 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/10 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/11 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/12 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/13 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/14 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/15 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/16 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/17 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/18 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/0/19 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/1/0 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/1/1 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/1/2 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/1/3 {
-        unit 0 {
-            family ethernet-switching {
-                port-mode access;
-                vlan {
-                    members Users-1st;
-                }
-            }
-        }
-    }
-    ge-0/1/4 {
-        unit 0 {
-            family ethernet-switching;
-        }
-    }
-    ge-0/1/5 {
-        unit 0 {
-            family ethernet-switching;
-        }
-    }
-    ge-0/1/6 {
-        unit 0 {
-            family ethernet-switching;
-        }
-    }
-    ge-0/1/7 {
-        unit 0 {
-            family ethernet-switching;
-        }
-    }
-    vme {
-        unit 0 {
-            family inet {
-                address 10.196.2.19/24;
-            }
-        }
-    }
-}
-snmp {
-    description NEWY-EX2200-45thFL;
-    location NEWY;
-    contact "Orion@Demo.Lab";
+}snmp {
+    description BCN-EX-SW01;
+    location Barcelona;
+    contact "Raul Gonzalez";
     view jweb-view-all {
         oid .1 include;
     }
     view all {
         oid .1;
     }
-    community fsB37tocO2G0-ro {
+    community public {
         view jweb-view-all;
         authorization read-only;
-    }
-    community mMFEV30l1Evo-rw {
-        authorization read-write;
     }
     health-monitor {
         interval 300;
@@ -337,7 +160,7 @@ snmp {
 }
 routing-options {
     static {
-        route 0.0.0.0/0 next-hop 10.196.2.1;
+        route 0.0.0.0/0 next-hop 10.0.0.1;
     }
 }
 protocols {
@@ -351,82 +174,12 @@ protocols {
     lldp-med {
         interface all;
     }
-    sflow {
-        polling-interval 20;
-        collector 10.1.100.22 {
-            udp-port 2055;
-        }
-        interfaces ge-0/0/1.0;
-        interfaces ge-0/0/2.0;
-    }
 }
 ethernet-switching-options {
     secure-access-port {
         vlan VMs {
             arp-inspection;
             examine-dhcp;
-        }
-    }
-    voip {
-        interface ge-0/0/4.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/5.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/6.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/7.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/8.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/9.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/10.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/11.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/12.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/13.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/14.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/15.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/16.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/17.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/18.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/19.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/20.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/21.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/22.0 {
-            vlan IPT-1st;
-        }
-        interface ge-0/0/23.0 {
-            vlan IPT-1st;
         }
     }
     storm-control {
@@ -468,4 +221,3 @@ vlans {
         vlan-id 199;
     }
 }
-{master:0}
