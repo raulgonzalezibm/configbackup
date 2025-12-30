@@ -81,7 +81,7 @@ interfaces {
             family ethernet-switching {
                 port-mode trunk;
                 vlan {
-                    members [ Heartbeat IPT-1st IPT-2nd IPT-Core NOC Users-1st Users-2nd VMs WAN iSCSI-SAN ];
+                    members [ Heartbeat IPT-1st IPT-2nd IPT-Core NOC Users-1st Users-2nd VM-Mgmt VMs WAN iSCSI-SAN ];
                 }
             }
         }
