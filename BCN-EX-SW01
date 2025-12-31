@@ -1,7 +1,7 @@
 version 12.3R11.2;
 system {
     host-name BCN-EX-SW01;
-    time-zone America/New_York;
+    time-zone Europe/Paris;
     root-authentication {
         encrypted-password "$G1Y'/1aG15G*afYJ+51Go1!aTQjGq5.1"; ## SECRET-DATA
     }
