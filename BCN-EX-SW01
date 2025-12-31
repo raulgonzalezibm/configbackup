@@ -47,30 +47,35 @@ interfaces{
         ether-options {
             802.3ad ae0;
             speed auto;
+            mtu 9014;
         }
     }
     xe-0/0/1 {
         ether-options {
             802.3ad ae0;
             speed 10g;
+            mtu 9014;
         }
     }
     xe-0/0/2 {
         ether-options {
             802.3ad ae0;
             speed 10g;
+            mtu 9014;
         }
     }
     xe-0/0/3 {
         ether-options {
             802.3ad ae0;
             speed 10g;
+            mtu 9014;
         }
     }
     xe-0/1/0 {
         ether-options {
             802.3ad ae0;
             speed 10g;
+            mtu 9014;
         }
         unit 0 {
             family ethernet-switching {
@@ -85,6 +90,7 @@ interfaces{
         ether-options {
             802.3ad ae0;
             speed 10g;
+            mtu 9014;
         }
         unit 0 {
             family ethernet-switching {
@@ -99,6 +105,7 @@ interfaces{
         ether-options {
             802.3ad ae0;
             speed 10g;
+            mtu 9014;
         }
         unit 0 {
             family ethernet-switching {
@@ -113,6 +120,7 @@ interfaces{
         ether-options {
             802.3ad ae0;
             speed 10g;
+            mtu 9014;
         }
         unit 0 {
             family ethernet-switching {
@@ -129,6 +137,7 @@ interfaces{
                 active;
                 periodic fast;
             }
+            mtu 9014;
         }
         unit 0 {
             family ethernet-switching {
