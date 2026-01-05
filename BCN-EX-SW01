@@ -46,7 +46,7 @@ interfaces{
     xe-0/0/0 {
         ether-options {
             802.3ad ae0;
-            10g;
+            speed auto;
             mtu 9014;
         }
     }
