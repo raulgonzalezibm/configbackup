@@ -468,4 +468,48 @@ vlans {
         vlan-id 199;
     }
 }
+policy-options {
+    policy-statement BGP-EXPORT {
+        term DIRECT {
+            from {
+                protocol direct;
+                route-filter 198.51.100.0/24 exact;
+            }
+            then accept;
+        }
+        then reject;
+    }
+}
+routing-options {
+    router-id 10.35.1.2;
+    autonomous-system 65101;
+}
+protocols {
+    bgp {
+        group EBGP {
+            type external;
+            peer-as 65102;
+            family inet {
+                unicast;
+            }
+            export BGP-EXPORT;
+            neighbor 10.35.2.1;
+            neighbor 10.35.2.2;
+        }
+        group IBGP {
+            type internal;
+            local-address 10.35.1.1;
+            family inet {
+                unicast;
+            }
+            export BGP-EXPORT;
+            local-as 65101;
+            cluster 192.0.1.1;
+            neighbor 192.0.1.2 {
+                description "IBGP to RT2";
+            }
+        }
+    }
+}
+
 {master:0}
