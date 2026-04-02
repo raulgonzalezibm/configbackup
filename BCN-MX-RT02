@@ -499,7 +499,7 @@ protocols {
         }
         group IBGP {
             type internal;
-            local-address 10.35.2.1;
+            local-address 10.35.2.2;
             family inet {
                 unicast;
             }
