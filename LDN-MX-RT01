@@ -494,8 +494,18 @@ protocols {
                 unicast;
             }
             export BGP-EXPORT;
-            neighbor 10.35.2.1;
-            neighbor 10.35.2.2;
+            neighbor 10.35.2.1 {
+                description "Upstream Provider";
+                peer-as 65102;
+                local-interface ge-0/0/0;
+                export EXPORT-DIRECT;
+            }
+            neighbor 10.35.2.2 {
+                description "Upstream Provider";
+                peer-as 65202;
+                local-interface ge-0/0/1;
+                export EXPORT-DIRECT;
+            }
         }
         group IBGP {
             type internal;
