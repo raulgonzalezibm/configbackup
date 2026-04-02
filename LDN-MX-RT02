@@ -54,15 +54,16 @@ system {
 interfaces {
     ge-0/0/0 {
         unit 0 {
-            family ethernet-switching;
+            family inet {
+                address 10.35.1.1/24;
+            }
         }
     }
     ge-0/0/1 {
         vlan-tagging;
-        unit 3340 {
-            vlan-id 3340;
+        unit 0 {
             family inet {
-                address 10.21.40.50/24;
+                address 10.35.1.2/24;
             }
         }
     }
