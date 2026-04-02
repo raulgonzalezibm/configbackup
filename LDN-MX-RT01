@@ -494,12 +494,12 @@ protocols {
                 unicast;
             }
             export BGP-EXPORT;
-            neighbor 10.35.1.1;
-            neighbor 10.35.1.2;
+            neighbor 10.35.2.1;
+            neighbor 10.35.2.2;
         }
         group IBGP {
             type internal;
-            local-address 10.35.2.1;
+            local-address 10.35.1.1;
             family inet {
                 unicast;
             }
