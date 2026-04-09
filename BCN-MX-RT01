@@ -502,7 +502,7 @@ protocols {
             export BGP-EXPORT;
             neighbor 10.35.1.1 {
                 description "Upstream Provider";
-                peer-as 65101;
+                peer-as 65103;
                 local-interface ge-0/0/0;
                 export EXPORT-DIRECT;
             }
